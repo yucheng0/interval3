@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity() {
       val myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
         if (item.itemId == R.id.menuRest) {
             println ("3=$myViewModel")
-            myViewModel.TOTALTIME.value = myViewModel.s1.value
-            myViewModel.LEFTTIME.value = myViewModel.s2.value
-            myViewModel.RIGHTTIME.value = myViewModel.s3.value
-            myViewModel.RESTTIME.value = myViewModel.s4.value
+            myViewModel.TOTALTIME.value = myViewModel.s1
+            myViewModel.LEFTTIME.value = myViewModel.s2
+            myViewModel.RIGHTTIME.value = myViewModel.s3
+            myViewModel.RESTTIME.value = myViewModel.s4
             myViewModel.REP.value = 0
             myViewModel.ACCTIME.value = 0
             tv_totalTime.setTextColor(android.graphics.Color.BLACK)   //設成黑色

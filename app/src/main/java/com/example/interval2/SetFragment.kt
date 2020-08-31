@@ -121,10 +121,10 @@ class SetFragment : Fragment() {
 
             println("檔案不存在2")
             // 設初值
-            myViewModel.s1.value = TOTALTIMECONST
-            myViewModel.s2.value = LEFTTIMECONST
-            myViewModel.s3.value = RIGHTTIMECONST
-            myViewModel.s4.value = RESTTIMECONST
+            myViewModel.s1 = TOTALTIMECONST
+            myViewModel.s2 = LEFTTIMECONST
+            myViewModel.s3 = RIGHTTIMECONST
+            myViewModel.s4 = RESTTIMECONST
             myViewModel.TOTALTIME.value = TOTALTIMECONST
             myViewModel.LEFTTIME.value = LEFTTIMECONST
             myViewModel.RIGHTTIME.value = RIGHTTIMECONST
@@ -151,15 +151,15 @@ class SetFragment : Fragment() {
 
 //檔案不存在,導航會當機
             // set Json
-            myViewModel.s1.value  = setTotalTime.text.toString().toInt()
-            myViewModel.s2.value = setLeftLegTime.text.toString().toInt()
-            myViewModel.s3.value = setRightLegTime.text.toString().toInt()
-            myViewModel.s4.value = setRestTime.text.toString().toInt()
+            myViewModel.s1  = setTotalTime.text.toString().toInt()
+            myViewModel.s2 = setLeftLegTime.text.toString().toInt()
+            myViewModel.s3 = setRightLegTime.text.toString().toInt()
+            myViewModel.s4 = setRestTime.text.toString().toInt()
             myViewModel.s5 = checkBox.isChecked   //20200831
-            var s11 = myViewModel.s1.value.toString().toInt()
-            var s12 = myViewModel.s2.value.toString().toInt()
-            var s13 = myViewModel.s3.value.toString().toInt()
-            var s14= myViewModel.s4.value.toString().toInt()
+            var s11 = myViewModel.s1.toString().toInt()
+            var s12 = myViewModel.s2.toString().toInt()
+            var s13 = myViewModel.s3.toString().toInt()
+            var s14= myViewModel.s4.toString().toInt()
             var s15 = myViewModel.s5
 
             val data0 = DataSetRecord(s11,s12,s13,s14,s15)

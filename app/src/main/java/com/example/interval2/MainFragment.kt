@@ -159,9 +159,9 @@ class MainFragment : Fragment() {
                             else
                                 myViewModel.texttospeech("Change to right Leg")
 
-                            myViewModel.LEFTTIME.value = myViewModel.s2.value
-                            myViewModel.RIGHTTIME.value = myViewModel.s3.value
-                            myViewModel.RESTTIME.value = myViewModel.s4.value
+                            myViewModel.LEFTTIME.value = myViewModel.s2
+                            myViewModel.RIGHTTIME.value = myViewModel.s3
+                            myViewModel.RESTTIME.value = myViewModel.s4
                             myViewModel.REP.value = myViewModel.REP.value?.plus(1)
 
                         }
@@ -195,10 +195,10 @@ class MainFragment : Fragment() {
                     toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
                     toast.show()
 
-                    myViewModel.TOTALTIME.value = myViewModel.s1.value
-                    myViewModel.LEFTTIME.value = myViewModel.s2.value
-                    myViewModel.RIGHTTIME.value = myViewModel.s3.value
-                    myViewModel.RESTTIME.value = myViewModel.s4.value
+                    myViewModel.TOTALTIME.value = myViewModel.s1
+                    myViewModel.LEFTTIME.value = myViewModel.s2
+                    myViewModel.RIGHTTIME.value = myViewModel.s3
+                    myViewModel.RESTTIME.value = myViewModel.s4
                     myViewModel.ACCTIME.value = 0
                     myViewModel.REP.value = 0
 
@@ -290,10 +290,10 @@ class MainFragment : Fragment() {
                 }
 
                 var data3 = gson.fromJson(ss, DataSetRecord::class.java)
-                myViewModel.s1.value = data3.totaltime
-                myViewModel.s2.value = data3.leftlegtime
-                myViewModel.s3.value = data3.righlegtime
-                myViewModel.s4.value = data3.resttime
+                myViewModel.s1 = data3.totaltime
+                myViewModel.s2 = data3.leftlegtime
+                myViewModel.s3 = data3.righlegtime
+                myViewModel.s4 = data3.resttime
                 myViewModel.s5 = data3.selected
 
                 myViewModel.TOTALTIME.value = data3.totaltime
@@ -306,10 +306,10 @@ class MainFragment : Fragment() {
                 e.printStackTrace()
                 println("檔案不存在")
 // 設初值
-                myViewModel.s1.value = TOTALTIMECONST
-                myViewModel.s2.value = LEFTTIMECONST
-                myViewModel.s3.value = RIGHTTIMECONST
-                myViewModel.s4.value = RESTTIMECONST
+                myViewModel.s1 = TOTALTIMECONST
+                myViewModel.s2 = LEFTTIMECONST
+                myViewModel.s3 = RIGHTTIMECONST
+                myViewModel.s4 = RESTTIMECONST
                 myViewModel.s5 = false
                 myViewModel.TOTALTIME.value = TOTALTIMECONST
                 myViewModel.LEFTTIME.value = LEFTTIMECONST

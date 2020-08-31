@@ -12,10 +12,10 @@ import java.util.*
 
 
 class MyViewModel:ViewModel() {
-    var s1 = MutableLiveData<Int>()
-    var s2 = MutableLiveData<Int>()
-    var s3 = MutableLiveData<Int>()
-    var s4 = MutableLiveData<Int>()
+    var s1 = TOTALTIMECONST
+    var s2 = LEFTTIMECONST
+    var s3 = RIGHTTIMECONST
+    var s4 = RESTTIMECONST
     var s5 = false
 
     var num = MutableLiveData<Int>()
@@ -45,10 +45,7 @@ class MyViewModel:ViewModel() {
         REP.value = REPCONST
         ACCTIMESTRING.value = "0:00"
 
-        s1.value = TOTALTIMECONST
-        s2.value = LEFTTIMECONST
-        s3.value = RIGHTTIMECONST
-        s4.value = RESTTIMECONST
+
     }
 
     lateinit var context: Context
