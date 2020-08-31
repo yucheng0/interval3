@@ -19,12 +19,12 @@ class MyViewModel:ViewModel() {
     var s5 = false
     var startBit = false
     var SELECTED = false
+    var poweronEnabled = false
     lateinit var job:Job
 
 
   //綁定數據
     var num = MutableLiveData<Int>()
-    var poweronEnabled = MutableLiveData<Boolean>()
     var pageEnabled = MutableLiveData<Boolean>()
     //這些值綁定在xml內(databinking)不可以改成普通值否則會發生嚴重的錯誤
      var TOTALTIME =MutableLiveData<Int>()       //目前顯示值綁定在xml內
@@ -41,7 +41,7 @@ class MyViewModel:ViewModel() {
         num.value = 0
     //    startBit.value = false
         pageEnabled.value = false
-        poweronEnabled.value = false
+ //       poweronEnabled.value = false
        TOTALTIME.value = TOTALTIMECONST   //設初值
         LEFTTIME.value = LEFTTIMECONST
         RIGHTTIME.value = RIGHTTIMECONST

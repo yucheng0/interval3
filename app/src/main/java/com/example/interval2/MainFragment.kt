@@ -267,8 +267,8 @@ class MainFragment : Fragment() {
             ViewModelProvider(this).get(MyViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
 
-        if (myViewModel.poweronEnabled.value == false) {
-            myViewModel.poweronEnabled.value = true
+        if (myViewModel.poweronEnabled == false) {
+            myViewModel.poweronEnabled = true
             //進來先讀出值
             // read file....................
             try {
