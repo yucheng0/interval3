@@ -17,27 +17,32 @@ class MyViewModel:ViewModel() {
     var s3 = RIGHTTIMECONST
     var s4 = RESTTIMECONST
     var s5 = false
+    var startBit = false
+    var SELECTED = false
+    lateinit var job:Job
 
+
+  //綁定數據
     var num = MutableLiveData<Int>()
-    var startBit = MutableLiveData<Boolean>()
     var poweronEnabled = MutableLiveData<Boolean>()
     var pageEnabled = MutableLiveData<Boolean>()
-     var TOTALTIME = MutableLiveData<Int>()         //目前顯示值
+    //這些值綁定在xml內(databinking)不可以改成普通值否則會發生嚴重的錯誤
+     var TOTALTIME =MutableLiveData<Int>()       //目前顯示值綁定在xml內
      var LEFTTIME = MutableLiveData<Int>()
     var RIGHTTIME = MutableLiveData<Int>()
     var RESTTIME = MutableLiveData<Int>()
     var ACCTIME = MutableLiveData<Int>()
     var REP = MutableLiveData<Int>()
-    var SELECTED = false
     var ACCTIMESTRING = MutableLiveData<String>()
-    lateinit var job:Job
+    //========================================
+
 
     init {
         num.value = 0
-        startBit.value = false
+    //    startBit.value = false
         pageEnabled.value = false
         poweronEnabled.value = false
-        TOTALTIME.value = TOTALTIMECONST   //設初值
+       TOTALTIME.value = TOTALTIMECONST   //設初值
         LEFTTIME.value = LEFTTIMECONST
         RIGHTTIME.value = RIGHTTIMECONST
         RESTTIME.value = RESTTIMECONST
@@ -66,15 +71,15 @@ class MyViewModel:ViewModel() {
 
     //
     fun startProc(){
-           if (startBit.value==false) {
-           startBit.value = true
+           if (startBit==false) {
+           startBit = true
            num.value = num.value  //將所有資料更新一次
            }   else {Toast.makeText(context, "不要再按了", Toast.LENGTH_SHORT).show() }
          }
 
     fun pauseProc(){
-        if (startBit.value == true) {
-            startBit.value = false
+        if (startBit== true) {
+            startBit = false
             job.cancel()
         }
     }

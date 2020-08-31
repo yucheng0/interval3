@@ -108,11 +108,11 @@ class MainFragment : Fragment() {
         //   DataBindingUtil.inflate(LayoutInflater,R.layout.fragment_main,null,false)
 //如果協程正在執行就先cancel它，預防重復開協程，這步驟很重要不然會數值跳很快
         // 當我旋轉螢幕時
-        if (myViewModel.startBit.value == true)
+        if (myViewModel.startBit == true)
             myViewModel.job.cancel()
 //監聽num數值是否有變化
         myViewModel.num.observe(viewLifecycleOwner, Observer {
-            if (myViewModel.startBit.value == true) {
+            if (myViewModel.startBit == true) {
 
                 myViewModel.initialize()       //啟動協程1s
                 when {
@@ -217,8 +217,8 @@ class MainFragment : Fragment() {
               } */
 
         btnStart.setOnClickListener {
-            if (myViewModel.startBit.value == false) {
-                myViewModel.startBit.value = true
+            if (myViewModel.startBit == false) {
+                myViewModel.startBit = true
                 myViewModel.num.value = myViewModel.num.value  //將所有資料更新一次
                 //       myViewModel.startProc()
             } else {
